@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-
-
-
-})
+import RSS from './components/RSS';
+//import Inventory from './components/Inventory';
+import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Route path="/Awesome" render={(routeProps) => (
+    <RSS {...['https://9gag-rss.com/api/rss/get?code=9GAGAwesome&format=2']} />
+  )} exact/>
+          <Route path="/Comic" render={(routeProps) => (
+        <RSS {...['https://9gag-rss.com/api/rss/get?code=9GAGComic&format=2']} />
+        )} exact/>
+        <Route path="/Funny" render={(routeProps) => (
+      <RSS {...['https://9gag-rss.com/api/rss/get?code=9GAGFunny&format=2']} />
+      )} exact/>
+      <Route path="/" render={(routeProps) => (
+    <RSS {...['https://9gag-rss.com/api/rss/get?code=9GAGHot&format=2']} />
+    )} exact/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
