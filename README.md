@@ -1,7 +1,7 @@
 # [RSS Feed](https://rss-render.herokuapp.com)
 ## Quick Start
 
-Add your MONGO_URI to the default.json file. Make sure you set an env var for that and the jwtSecret on deployment
+Run both client and server and interact with the page on localhost:3000
 
 ```bash
 # Install dependencies for server
