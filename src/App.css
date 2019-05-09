@@ -1,6 +1,12 @@
 body{
   text-align: center;
 }
+#pageTitle{
+  font-size: 75px;
+}
+#caption{
+  font-size: 25px;
+}
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
